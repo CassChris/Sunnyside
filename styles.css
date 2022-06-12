@@ -1,0 +1,501 @@
+:root{
+    /* ### Primary */
+
+--Soft_red: hsl(7, 99%, 70%);
+--Yellow: hsl(51, 100%, 49%);
+/* - Dark desaturated cyan (graphic design text):  */
+--Cyan: hsl(167, 40%, 24%);
+--Dark-blue: hsl(198, 62%, 26%);
+--Dark-moderate-cyan :hsl(168, 32%, 57%);
+--celeste: #3dbeff;
+
+}
+body{
+    /*
+    font-family: 'Fraunces', serif; 
+    */
+    font-family: 'Barlow', sans-serif;
+
+}
+
+/*  ************NAV*************** */
+.nav{
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    color: #ffffff;
+    transition: all .3s ease-in-out;
+}
+
+.toggle__hamburger{
+    color: hsl(0, 0%, 15%);
+    background: none;
+    border: none;
+    font-size: 30px;
+    padding: 0 20px;
+    line-height: 60px;
+    display: none;
+    cursor: pointer;
+}
+
+.nav__logo span{
+    font-size: 2em;
+    font-family: 'Fraunces', sans-serif;
+    font-weight: 900;
+}
+
+.nav__ul{
+    display: flex;
+    list-style: none;
+}
+
+.nav__li{
+    margin-right: 20px;
+}
+
+.nav__a{
+    font-size: 1em;
+    text-decoration: none;
+    color: inherit;
+    padding: 10px 20px;
+    
+}
+
+@media (hover:hover){
+    
+    .nav__a:hover{
+        background: rgb(255, 255, 255);
+        border-radius: 20px;
+        color: hsl(0, 0%, 10%);
+    }
+}
+
+/* NAV RESPONSIVE TAMAÑO CELULAR */
+@media (max-width: 675px){
+    
+    .nav{
+       padding: 10px;
+       margin: 0 auto;
+       z-index: 100;
+    }
+
+    .nav__logo span{
+        font-size: 1.6em;
+    }
+
+    .nav__ul{
+        width: 80%;
+        clip-path: polygon(84% 20%, 100% 0, 100% 50%, 100% 100%, 0 100%, 0 20%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: rgb(255, 255, 255);
+        color: var(--Cyan);
+        position: fixed;
+        top: -320px;
+        left: 10%;
+        margin: 0;
+        padding: 61px 0 0 0;
+        overflow: hidden;
+        transition: all .3s ease-in-out;
+        color: white;
+        z-index: -1;
+        
+
+    }
+
+    .nav__li{
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+        
+    }
+
+    .nav__a{
+        display: block;
+        background: white;
+        width: 100%;
+        padding: 20px;
+        margin: 1px 0;
+        text-align: center;
+        border: 1px solid white;
+
+    }
+
+    .nav__menu-visible{
+        top: 85px;
+        color: rgb(57, 57, 57);
+    }
+
+    .toggle__hamburger{
+        display: block;
+    }
+
+/* NAV HOVER TAMAÑO CEL/TABLET */
+@media (hover:hover){
+    
+    .nav__a:hover{
+        background: var(--celeste);
+        border-radius: 0;
+        color: hsl(0, 0%, 10%);
+    }
+}
+}
+
+
+
+
+
+
+
+/* *********************HEADER********************* */
+
+.header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/desktop/image-header.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.header__title{
+    text-transform: uppercase;
+    font-size: 3em;
+    letter-spacing: 5px;
+    font-family: 'Fraunces',serif;
+    color: white;
+}
+
+/*  CARTAS */
+
+.cards{
+    display: grid;
+    grid-auto-flow: dense;
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(auto-fit,minmax(375px, 1fr));
+}
+
+
+.cards__item{
+    
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center;
+    min-height: 500px;
+    max-height: 500px;
+
+}
+
+.cards__item:nth-child(1),.cards__item:nth-child(4){
+    background: #efefef;
+    color: var(--Dark-blue);
+    padding: 50px;
+    align-items: flex-start;
+}
+
+.cards__item:nth-child(2){
+    background-image: url(images/desktop/image-transform.jpg);
+}
+
+.cards__item:nth-child(3){
+    background-image: url(images/desktop/image-stand-out.jpg);
+}
+
+.cards__item:nth-child(5){
+    background-image: url(images/desktop/image-graphic-design.jpg);
+}
+
+.cards__item:nth-child(6){
+    background-image: url(images/desktop/image-photography.jpg);
+}
+.cards__item:nth-child(5),.cards__item:nth-child(6){
+    justify-content: flex-end;
+    align-items: center;
+    padding: 50px;
+    color: var(--Cyan);
+}
+
+.cards__item:nth-child(1) a,.cards__item:nth-child(4) a{
+    color: inherit;
+    text-decoration: none;
+}   
+
+.cards__h2,.cards__h3{
+    font-family: 'Fraunces';
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+/* .cards__h3{
+
+
+} */
+
+.cards__p{
+    line-height: 1.5;
+}
+
+.cards__a{
+    font-family: 'Fraunces';
+    font-weight: 900;
+    padding: 10px 0;
+    z-index: 30;
+    position: relative;
+}
+.cards__a::before{
+    position: absolute;
+    content: '';
+    width: 110%;
+    margin: 0 auto;
+    height: 10px;
+    border-radius: 20px;
+    top: 60%;
+    left: -5%;
+    background: transparent;
+    z-index: -1;
+}
+
+@media (hover:hover){
+    
+    .cards__a:hover:before{
+        background: #ffda0576;
+    }
+    
+}
+
+
+/* testimonials */
+
+.testimonials{
+    background-color: #efefef;
+    
+}
+
+
+.testimonials__title{
+    
+    margin-top: 0;
+    font-family: 'Fraunces';
+    text-align: center;
+    font-size: 2em;
+    color: rgb(89, 89, 89);
+    padding: 60px 0 30px 0;
+}
+
+.testimonials__items{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 60px;
+}
+
+.testimonials__item{
+    
+    max-width:30%;
+    min-width: 360px;
+    background-color: transparent;
+    color: rgb(22, 21, 21);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    margin: 10px 10px 30px 10px;
+}
+.testimonials__div-img{
+    margin-bottom: 10px;
+}
+.testimonials__img{
+    border-radius: 50%;
+}
+
+
+.testimonials__text{
+    line-height: 1.6;
+}
+
+.testimonials__name{
+    font-family: 'Fraunces';
+    font-weight: 900;
+}
+
+.testimonials__job{
+    color: gray;
+}
+
+
+
+
+
+
+
+
+/* GALERIA */
+
+.galery{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-auto-flow: dense;
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+}
+
+
+.galery__item:nth-child(1){
+    
+    background-image: url(images/desktop/image-gallery-milkbottles.jpg);
+
+}
+
+.galery__item:nth-child(2){
+    
+    background-image: url(images/desktop/image-gallery-orange.jpg);
+
+}
+.galery__item:nth-child(3){
+    
+    background-image: url(images/desktop/image-gallery-cone.jpg);
+
+}
+.galery__item:nth-child(4){
+    
+    background-image: url(images/desktop/image-gallery-sugarcubes.jpg);
+
+}
+
+.galery__item:nth-child(1),.galery__item:nth-child(2),.galery__item:nth-child(3),.galery__item:nth-child(4){
+    min-height: 400px;
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* footer */
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--Dark-moderate-cyan);
+    color: var(--Cyan);
+}
+
+.footer__h2{
+    font-family: 'Fraunces';
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.footer__nav{
+    text-align: center;
+}
+
+.footer__ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 20px;
+}
+
+.footer__li{
+    padding: 20px;
+}
+
+
+.footer__a{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.footer__social-media{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 50px;
+}
+
+.footer__icon{
+    margin: 10px 20px;
+    
+
+}
+
+.footer__i{
+    padding: 10px;
+    border-radius: 10px;
+}
+@media (hover:hover){
+    
+    .footer__a:hover{
+        
+        color: white;
+    }
+
+    .footer__i:hover{
+
+       color: var(--Yellow);
+
+    
+    }
+    
+}
+
+
+.footer__i{
+
+    color: rgb(5, 94, 50);
+    font-size: 1.2em;
+}
+
+
+
+
+
+
+/* atribution */
+
+.attribution{
+    padding: 20px;
+    background-color: var(--Cyan);
+    color: white;
+    font-size: .8em;
+}
+
+.attribution a{
+    text-decoration: none;
+    color: wheat;
+    }
+
+
+/* media query para cards mayor al ancho de pantalla clasico(ocupar 50%) */
+@media (min-width: 1300px) {
+        
+.cards{
+
+    grid-template-columns: repeat(auto-fit,minmax(375px,50%));
+}
+}
+
+
+
